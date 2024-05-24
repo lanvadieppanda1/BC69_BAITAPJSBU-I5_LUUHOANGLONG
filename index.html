@@ -13,10 +13,36 @@
 </head>
 
 <body>
-    <div class="mb-3">
-        <label for="" class="form-label">Name</label>
-        <input type="text" class="form-control" name="" id="" placeholder="" />
-    </div>
+    <form id="examForm">
+        <div class="mb-3">
+            <label>Điểm môn 1:</label>
+            <input type="text" class="form-control" name="subject1" id="subject1" placeholder="Điểm môn 1" />
+            <label for="" class="form-label">Điểm môn 2:</label>
+            <input type="text" class="form-control" name="subject2" id="subject2" placeholder="Điểm môn 2" />
+            <label for="" class="form-label">Điểm môn 3:</label>
+            <input type="text" class="form-control" name="subject3" id="subject3" placeholder="Điểm môn 3" />
+        </div>
+
+        <label>Chọn khu vực:</label>
+        <select id="area" name="area">
+            <option value="0">Chọn khu vực</option>
+            <option value="1">Khu vực 1 (+1 điểm)</option>
+            <option value="2">Khu vực 2 (+2 điểm)</option>
+            <option value="3">Khu vực 3 (+3 điểm)</option>
+        </select><br><br>
+
+        <label>Chọn đối tượng:</label>
+        <select id="category" name="category">
+            <option value="0">Chọn đối tượng</option>
+            <option value="1">Đối tượng 1 (+1 điểm)</option>
+            <option value="2">Đối tượng 2 (+2 điểm)</option>
+            <option value="3">Đối tượng 3 (+3 điểm)</option>
+        </select><br><br>
+
+        <button type="button" id="btnResult">Kiểm tra kết quả</button>
+
+    </form>
+    <h2 id="result"></h2>
 
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
