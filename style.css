@@ -1,4 +1,6 @@
 #inputConnect,
 #lblConnect {
   display: none;
+  width: 50%;
+  margin-top: 20px;
 }
