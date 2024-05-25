@@ -10,39 +10,110 @@
     <!-- Bootstrap CSS v5.2.1 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <form id="examForm">
-        <div class="mb-3">
+
+    <div class="row">
+        <!-- bài 1 -->
+        <div class="container mb-5 mt-5 col-7">
+            <h4>🏫 Quản lý tuyển sinh</h4>
+            <label>Điểm chuẩn:</label>
+            <input type="number" class="form-control" id="scoreBase" placeholder="Điểm chuẩn" />
             <label>Điểm môn 1:</label>
-            <input type="text" class="form-control" name="subject1" id="subject1" placeholder="Điểm môn 1" />
-            <label for="" class="form-label">Điểm môn 2:</label>
-            <input type="text" class="form-control" name="subject2" id="subject2" placeholder="Điểm môn 2" />
-            <label for="" class="form-label">Điểm môn 3:</label>
-            <input type="text" class="form-control" name="subject3" id="subject3" placeholder="Điểm môn 3" />
+            <input type="number" class="form-control" id="subject1" placeholder="Điểm môn 1" />
+            <label>Điểm môn 2:</label>
+            <input type="number" class="form-control" id="subject2" placeholder="Điểm môn 2" />
+            <label>Điểm môn 3:</label>
+            <input type="number" class="form-control" id="subject3" placeholder="Điểm môn 3" />
+
+            <label>Chọn khu vực:</label>
+            <select id="area" name="area" class="mt-3">
+                <option value="0">Chọn khu vực</option>
+                <option value="2">Khu vực 1 (+2 điểm)</option>
+                <option value="1">Khu vực 2 (+1 điểm)</option>
+                <option value="0.5">Khu vực 3 (+0.5 điểm)</option>
+            </select><br><br>
+
+            <label>Chọn đối tượng:</label>
+            <select id="category" name="category">
+                <option value="0">Chọn đối tượng</option>
+                <option value="2.5">Đối tượng 1 (+2.5 điểm)</option>
+                <option value="1.5">Đối tượng 2 (+1.5 điểm)</option>
+                <option value="1">Đối tượng 3 (+1 điểm)</option>
+            </select><br><br>
+
+            <button type="button" id="btnResult" class="bg-primary border-0 rounded-5 text-white p-2">Kiểm tra kết
+                quả</button>
+            <div class="alert alert-success mt-5" role="alert">
+                <h2 id="scoreResult" class="fs-5"></h2>
+            </div>
+
         </div>
 
-        <label>Chọn khu vực:</label>
-        <select id="area" name="area">
-            <option value="0">Chọn khu vực</option>
-            <option value="1">Khu vực 1 (+1 điểm)</option>
-            <option value="2">Khu vực 2 (+2 điểm)</option>
-            <option value="3">Khu vực 3 (+3 điểm)</option>
-        </select><br><br>
+        <!-- bài 2 -->
+        <div class="container mb-5 col-7">
+            <h4>🔋 Tính tiền điện</h4>
+            <label>Nhập họ tên:</label>
+            <input type="text" class="form-control" id="inputName" placeholder="Nhập họ tên" />
+            <label>Nhập số kw:</label>
+            <input type="number" class="form-control" id="inputKW" placeholder="Nhập số kw" />
 
-        <label>Chọn đối tượng:</label>
-        <select id="category" name="category">
-            <option value="0">Chọn đối tượng</option>
-            <option value="1">Đối tượng 1 (+1 điểm)</option>
-            <option value="2">Đối tượng 2 (+2 điểm)</option>
-            <option value="3">Đối tượng 3 (+3 điểm)</option>
-        </select><br><br>
+            <button type="button" id="btnElecBill" class="bg-primary border-0 rounded-5 text-white p-2 mt-3">Tính
+                tiền
+                điện</button>
+            <div class="alert alert-success mt-5" role="alert">
+                <h2 id="elecBill" class="fs-5"></h2>
+            </div>
 
-        <button type="button" id="btnResult">Kiểm tra kết quả</button>
+        </div>
 
-    </form>
-    <h2 id="result"></h2>
+        <!-- bài 3 -->
+        <div class="container mb-5 col-7">
+            <h4>🔋 Tính thuế thu nhập cá nhân</h4>
+            <label>Nhập họ tên:</label>
+            <input type="text" class="form-control" id="inputNm" placeholder="Nhập họ tên" />
+            <label>Tổng thu nhập năm:</label>
+            <input type="number" class="form-control" id="inputSalary" placeholder="Tổng thu nhập năm" />
+            <label>Số người phụ thuộc</label>
+            <input type="number" class="form-control" id="inputUser" placeholder="Số người phụ thuộc" />
+
+            <button type="button" id="btnCalcTax" class="bg-primary border-0 rounded-5 text-white p-2 mt-3">Tính
+                tiền thuế</button>
+            <div class="alert alert-success mt-5" role="alert">
+                <h2 id="taxResult" class="fs-5"></h2>
+            </div>
+
+        </div>
+
+
+        <!-- bài 4 -->
+        <div class="container mb-5 mt-5 col-7">
+            <h4>🕸️ Tính tiền cáp</h4>
+            <label>Chọn loại khách hàng:</label>
+            <select id="cusmType" class="mt-3" onchange="disableInput();">
+                <option value="0">Chọn loại khách hàng</option>
+                <option value="user">Nhà Dân</option>
+                <option value="company">Doanh Nghiệp</option>
+            </select><br><br>
+            <label class="mt-3">Nhập mã khách hàng:</label>
+            <input class="mt-3" type="number" id="cusCode" placeholder="Nhập mã khách hàng" />
+            <label>Số kênh cao cấp</label>
+            <input class="mt-3" type="number" id="channelId" placeholder="Số kênh cao cấp" />
+            <label class="w-25 mt-3" id="lblConnect">Số kết nối</label>
+            <input class="mt-3" type="number" id="inputConnect" placeholder="Số kết nối">
+
+            </br></br>
+            <button type="button" id="btnNet" class="bg-primary border-0 rounded-5 text-white p-2 mt-3">Tính tình
+                cáp</button>
+            <div class="alert alert-success mt-5" role="alert">
+                <h2 id="txtNet" class="fs-5"></h2>
+            </div>
+
+        </div>
+    </div>
+
 
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"

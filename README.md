@@ -2,42 +2,40 @@
 # Sơ đồ 3 khối
 
 # Bài 1: Quản lý tuyển sinh
+
 1. Input: điểm chuẩn, khu vực, đối tượng, điểm môn thứ 1, thứ 2 và thứ 3
+
 2. Process: 
-    ■Kiểm tra điểm từng môn:
-        -> Nếu có điểm 0, kết luận rớt
-    ■Tính tổng điểm:
-        -> Tổng điểm = Điểm môn 1 + Điểm môn 2 + Điểm môn 3
-　      -> Cộng điểm khu vực, đối tượng nếu có
-    ■So sánh với điểm chuẩn:
-        -> Nếu Tổng điểm >= Điểm chuẩn, kết luận đậu
-　      -> Nếu Tổng điểm < Điểm chuẩn, kết luận rớt
-3. Output: 
-    ■Hiển thị kết quả
-        -> Nếu có môn điểm 0, hiển thị "Rớt"
-        -> Nếu Tổng điểm >= Điểm chuẩn, hiển thị "Đậu"
-        -> Nếu Tổng điểm < Điểm chuẩn, hiển thị "Rớt"
 
-# Bài 2: Tính giá trị trung bình của 5 số thực
+    ■Kiểm tra điểm từng môn
+    ■Tính tổng điểm
+    ■So sánh với điểm chuẩn
 
-1. Input: Nhập 5 số thực
-2. Process: Tính tổng và chia cho 5
-3. Output: Hiển thị giá trị trung bình
+3. Output: hiển thị kết quả đậu hoặc rớt và tổng điểm
 
-# Bài 3: Quy đổi từ USD sang VND
+# Bài 2: Tính tiền điện
 
-1. Input: Số tiền USD
-2. Process: Tính số tiền VND = Số tiền USD * 23,500
-3. Output: Hiển thị số tiền VND
+1. Input: Họ tên và số kw
 
-# Bài 4: Tính diện tích và chu vi hình chữ nhật
+2. Process:
 
-1. Input: Chiều dài và chiều rộng
+    ■Tạo biến chứa tên và số kw
+    ■Tính tiền dựa vào mức tiêu thụ
+    ■Trả về tên và số tiền điện
+
+3. Output:in ra kết quả : tên và số tiền điện
+
+# Bài 3: Tính thuế thu nhập cá nhân
+
+1. Input: nhập tên người dùng, tổng thu nhập năm và số người phụ thuộc
+2. Process: 
+    ■Tính thu nhập chịu thuế(Tổng thu nhập năm trừ đi mức giảm trừ gia cảnh cho bản thân (11 triệu/tháng) và cho mỗi người phụ thuộc (4 triệu/tháng).)
+    ■Kiểm tra mức thu nhập chịu thuế và áp dụng mức thuế
+    ■Tính thuế
+3. Output: Hiển thị tên và số tiền thuế phải trả với định dạng mlem
+
+# Bài 4: Tính tiền cáp
+
+1. Input: Chọn loại khách hàng, nhập mã khách hàng và số kênh
 2. Process: Tính diện tích = dài * rộng; Chu vi = (dài + rộng) * 2
 3. Output: Hiển thị diện tích và chu vi
-
-# Bài 5: Tính tổng 2 chữ số của số nhập vào
-
-1. Input: Số có 2 chữ số
-2. Process: Tính số hàng đơn vị và số hàng chục, sau đó tính tổng
-3. Output: Hiển thị tổng 2 chữ số
